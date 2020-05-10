@@ -1,0 +1,19 @@
+{
+  "name": "project-tech",
+  "version": "1.0.0",
+  "description": "Mijn project voor blok tech",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js",
+    "say-hello": "echo 'Hello World'"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "^6.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
