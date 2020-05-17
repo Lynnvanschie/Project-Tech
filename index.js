@@ -1,13 +1,20 @@
-//camelcase
-const camelCase = require('camelcase');
-console.log(camelCase('test-this-package'));
-
 //Express aanroepen
 const express = require('express');
 const app = express();
 
+//camelcase
+const camelCase = require('camelcase');
+console.log(camelCase('test-this-package'));
+
+//Ejs aanroepen
+const ejs = require("ejs");
+let name = ['Lynn', 'Max', 'Sem']; //Array voor name
+
 express()
   .use(express.static('static')) //Serveert static files
+  .set('view engine', 'ejs')
+  .set('views', 'view')
+  //Routes:
   .get('/', onhome)
   .get('/about', about)
   .get('/audio', audio)
@@ -16,7 +23,8 @@ express()
   .listen(1900)
 
 function onhome(req,res) {
-  res.status(200).send('<h1>Hello Client</h1>\n')
+  // res.status(200).send('<h1>Hello Client</h1>\n')
+  res.render('index', {name:name[1]});
 }
 
 function about(req,res) {
