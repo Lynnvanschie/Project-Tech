@@ -41,41 +41,59 @@ nav li:hover a {
   color: black;
 }
 
+/* Filter knop */
+.f-knop {
+  position: absolute;
+  background-color: white;
+  width: 3em;
+  height: 3em;
+  top: 6em;
+  right: 1rem;
+  border: 3px solid black;
+  border-radius: 6px;
+  padding: 0.3rem;
+  z-index: 2;
+}
+
+.f-knop:hover, .f-knop:focus{
+  background-color: #e2e2e2;
+  cursor: pointer;
+}
+
 /* Filters */
-#filters {
+.filters {
   /* background-color: #31dcb4; */
+  position: absolute;
+  width: 100%;
+  margin-left: -80em;
   background-color: white;
   padding: 2rem 2rem 1rem 2rem;
   font-size: 1.2rem;
+  transition: margin .3s cubic-bezier(0,.88,0,.99);
 }
 
-#filters span {
+.showfilters{
+	position: relative;
+  margin-left: 0rem;
+}
+
+.filters span {
   color: #0099CC;
 }
 
-#filters div {
+.filters div {
   display: flex;
   align-items: center;
   padding: 0.75rem 0;
 }
 
-#filters h2 {
+.filters h2 {
   padding: 0 1rem 1rem 0.5rem;
   font-size: 1.4rem;
   font-weight: 400;
 }
 
-#filters #f-knop {
-  position: absolute;
-  width: 3em;
-  height: 3em;
-  right: 2rem;
-  border: 3px solid black;
-  border-radius: 6px;
-  padding: 0.3rem;
-}
-
-#filters form {
+.filters form {
   display: grid;
   /* grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr; */
@@ -84,17 +102,17 @@ nav li:hover a {
   margin-top: 1rem;
 }
 
-#filters p, #filters label {
+.filters p, .filters label {
   padding: 0 1rem 0 0.5rem;
 }
 
-#filters input[type="radio"] {
+.filters input[type="radio"] {
   /* Bron weghalen radiobutton: https://markheath.net/post/customize-radio-button-css */
   opacity: 0;
   width: 0;
 }
 
-#filters .zoek label {
+.filters .zoek label {
   background-color: white;
   padding: 0.5rem 1.5rem;
   margin-right: 1rem;
@@ -102,7 +120,7 @@ nav li:hover a {
   border: 2px solid #FC1D6C;
 }
 
-#filters .zoek label:hover {
+.filters .zoek label:hover {
   cursor: pointer;
   background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
   /*Bron: https://cssgradient.io/ */
@@ -111,7 +129,7 @@ nav li:hover a {
   border: none;
 }
 
-#filters input[type="radio"]:checked+label {
+.filters input[type="radio"]:checked+label {
   background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
   /*Bron: https://cssgradient.io/ */
   color: white;
@@ -120,7 +138,7 @@ nav li:hover a {
 }
 
 /* Range sliders */
-#filters input[type=range] {
+.filters input[type=range] {
   /* Bron: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -132,15 +150,15 @@ nav li:hover a {
   opacity: 0.8;
 }
 
-#filters input[type=range]:hover {
+.filters input[type=range]:hover {
   opacity: 1;
 }
 
-#filters input[type=range]:focus {
+.filters input[type=range]:focus {
   outline: none;
 }
 
-#filters input[type=range]::-webkit-slider-thumb {
+.filters input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 1rem;
@@ -150,7 +168,7 @@ nav li:hover a {
   cursor: pointer;
 }
 
-#filters input[type=range]::-moz-range-thumb {
+.filters input[type=range]::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
   border-radius: 10px;
@@ -160,11 +178,11 @@ nav li:hover a {
 }
 
 /* Knoppen formulier */
-#filters #inleveren {
+.filters #inleveren {
   justify-content: flex-end;
 }
 
-#filters input[type=submit] {
+.filters input[type=submit] {
   font-size: 1.3rem;
   background-color: #FF5D31;
   color: white;
@@ -176,19 +194,19 @@ nav li:hover a {
   transition: color .2s ease;
 }
 
-#filters input[type=submit]:hover {
+.filters input[type=submit]:hover {
   background-color: #0099CC;
   color: white;
   cursor: pointer;
 }
 
-#filters img {
+.filters img {
   width: 1.5em;
   height: 1.5em;
   margin-right: 0.5rem;
 }
 
-#filters a {
+.filters a {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -198,7 +216,7 @@ nav li:hover a {
   background-color: #0099CC;
 }
 
-#filters a:hover {
+.filters a:hover {
   background-color: #FFD200;
 }
 
@@ -207,7 +225,7 @@ nav li:hover a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   grid-gap: 4rem;
-  margin: 4rem;
+  padding: 4rem 8vw;
 }
 
 #overzicht article {
