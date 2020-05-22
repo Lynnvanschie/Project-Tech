@@ -8,7 +8,8 @@
     "say-hello": "echo 'Hello World'",
     "nodemon": "nodemon index.js"
   },
-  "author": "",
+  "repository": "https://github.com/Lynnvanschie/Project-Tech",
+  "author": "Lynn van Schie",
   "license": "MIT",
   "dependencies": {
     "camelcase": "^6.0.0",

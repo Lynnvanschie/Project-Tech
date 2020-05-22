@@ -1,9 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('includes/head.ejs') %>
+<%- include ('includes/head.ejs') %>
 <body>
   <%- include ('includes/header.ejs') %>
-  <h1> Test <%= name %></h1>
-  <%- include ('includes/footer.ejs') %>
+
+  <main>
+    <img src="./img/filter.svg" alt="filter" class="f-knop">
+    <section class="filters">
+
+      <h2>Geselecteerde voorkeuren: <span>Geen</span></h2>
+      <form action="">
+        <div class="zoek">
+          <p>Ik zoek:</p>
+          <input type="radio" name="zoek" value="man" id="man" checked />
+          <label for="man">Man</label>
+
+          <input type="radio" name="zoek" value="vrouw" id="vrouw" />
+          <label for="vrouw">Vrouw</label>
+
+          <input type="radio" name="zoek" value="beide" id="beide" />
+          <label for="beide">Beide</label>
+        </div>
+        <div>
+          <label for="afstand">Afstand:</label>
+          <input type="range" min="0" max="200" value="100" name="Afstand" id="afstand">
+        </div>
+        <div class="slider">
+          <label for="leeftijd">Leeftijd:</label>
+          <input type="range" min="18" max="79" value="42" name="leeftijd" id="leeftijd">
+          <input type="range" min="19" max="80" value="42" name="leeftijd" id="leeftijd">
+        </div>
+      </form>
+      <div id="inleveren">
+        <input type="submit" name="" value="Sla op">
+        <a href="/favorieten"><img src="./img/star.svg" alt=""> Favorieten</a>
+      </div>
+    </section>
+
+    <section id='overzicht'>
+      <article>
+        <img src="./img/profilepicture.jpg" alt="vrouw">
+        <p><%= name[0] %></p>
+      </article>
+      <article>
+        <img src="./img/profilepicture.jpg" alt="vrouw">
+        <p><%= name[1] %></p>
+      </article>
+      <article>
+        <img src="./img/profilepicture.jpg" alt="vrouw">
+        <p><%= name[2] %></p>
+      </article>
+      <article>
+        <img src="./img/profilepicture.jpg" alt="vrouw">
+        <p><%= name[3] %></p>
+      </article>
+      <article>
+        <img src="./img/profilepicture.jpg" alt="vrouw">
+        <p><%= name[4] %></p>
+      </article>
+      <article>
+        <img src="./img/profilepicture.jpg" alt="vrouw">
+        <p><%= name[5] %></p>
+      </article>
+
+  </main>
+  <!-- <%- include ('includes/footer.ejs') %> -->
+  <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -3,12 +3,11 @@ const express = require('express');
 const app = express();
 
 //camelcase
-const camelCase = require('camelcase');
-console.log(camelCase('test-this-package'));
+// const camelCase = require('camelcase');
+// console.log(camelCase('test-this-package'));
 
 //Ejs aanroepen
 const ejs = require("ejs");
-let name = ['Lynn', 'Max', 'Sem']; //Array voor name
 
 express()
   .use(express.static('static')) //Serveert static files
@@ -16,6 +15,8 @@ express()
   .set('views', 'view')
   //Routes:
   .get('/', onhome)
+  .get('/favorieten', favorieten)
+  .get('/:name-:age', parameters)
   .get('/about', about)
   .get('/audio', audio)
   .get('/video', video)
@@ -24,7 +25,16 @@ express()
 
 function onhome(req,res) {
   // res.status(200).send('<h1>Hello Client</h1>\n')
-  res.render('index', {name:name[1]});
+  res.render('index', {name: name});
+}
+
+function favorieten(req,res) {
+  res.render('favorieten', {filterSet: filterSet});
+}
+
+
+function parameters(req,res){
+  res.send(req.params) //Geeft object met name:'', age:' '
 }
 
 function about(req,res) {
@@ -44,3 +54,35 @@ function video(req,res) {
 function image(req,res) {
   res.sendFile('/static/img/landschap.jpg', { root: __dirname })
 }
+
+let name = ['Andrea', 'Allison', 'Emily', 'Fiona', 'Sarah', 'Alex', 'Becky'];
+let filterSet = [
+  {
+    name: '\'Naam voorkeur\'',
+    geslacht: 'vrouwen',
+    leeftijdA: '22',
+    leeftijdB: '30',
+    afstand: '55'
+  },
+  {
+    name: '\'Naam voorkeur\'',
+    geslacht: 'vrouwen',
+    leeftijdA: '25',
+    leeftijdB: '55',
+    afstand: '25'
+  },
+  {
+    name: '\'Naam voorkeur\'',
+    geslacht: 'vrouwen',
+    leeftijdA: '29',
+    leeftijdB: '34',
+    afstand: '75'
+  },
+  {
+    name: '\'Naam voorkeur\'', 
+    geslacht: 'vrouwen',
+    leeftijdA: '25',
+    leeftijdB: '40',
+    afstand: '40'
+  },
+]

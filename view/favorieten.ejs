@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('includes/head.ejs') %>
+
+<body>
+  <%- include ('includes/header.ejs') %>
+
+  <main>
+    <section>
+      <h1>Favorieten voorkeuren</h1>
+    </section>
+
+    <section id='fav-voorkeuren'>
+      <article>
+        <p><%= filterSet[0].name %>: <span><%= filterSet[0].geslacht %>, van <%= filterSet[0].leeftijdA %> tot <%= filterSet[0].leeftijdB %>, tot <%= filterSet[0].afstand %> km.</span></p>
+        <button>Selecteer</button>
+      </article>
+      <article>
+        <p><%= filterSet[1].name %>:<span><%= filterSet[1].geslacht %>, van <%= filterSet[1].leeftijdA %> tot <%= filterSet[1].leeftijdB %>, tot <%= filterSet[1].afstand %> km.</span></p>
+        <button>Selecteer</button>
+      </article>
+      <article>
+        <p><%= filterSet[2].name %>: <span><%= filterSet[2].geslacht %>, van <%= filterSet[2].leeftijdA %> tot <%= filterSet[2].leeftijdB %>, tot <%= filterSet[2].afstand %> km.</span></p>
+        <button>Selecteer</button>
+      </article>
+      <article>
+        <p><%= filterSet[3].name %>: <span><%= filterSet[3].geslacht %>, van <%= filterSet[3].leeftijdA %> tot <%= filterSet[3].leeftijdB %>, tot <%= filterSet[3].afstand %> km.</span></p>
+        <button>Selecteer</button>
+      </article>
+  </main>
+
+  <%- include ('includes/footer.ejs') %>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
