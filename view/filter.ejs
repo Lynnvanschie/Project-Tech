@@ -1,0 +1,26 @@
+<form action="/favorieten" method="post">
+  <div class="zoek">
+    <p>Ik zoek:</p>
+    <input type="radio" name="zoek" value="man" id="man" checked />
+    <label for="man">Man</label>
+
+    <input type="radio" name="zoek" value="vrouw" id="vrouw" />
+    <label for="vrouw">Vrouw</label>
+
+    <input type="radio" name="zoek" value="beide" id="beide" />
+    <label for="beide">Beide</label>
+  </div>
+  <div>
+    <label for="afstand">Afstand:</label>
+    <input type="range" min="0" max="200" value="100" name="Afstand" id="afstand">
+  </div>
+  <div class="slider">
+    <label for="leeftijd">Leeftijd:</label>
+    <input type="range" min="18" max="79" value="42" name="leeftijd" id="leeftijd">
+    <input type="range" min="19" max="80" value="42" name="leeftijd" id="leeftijd">
+  </div>
+  <div id="inleveren">
+    <input type="submit" name="" value="Sla op">
+    <a href="/favorieten"><img src="./img/star.svg" alt=""> Favorieten</a>
+  </div>
+</form>
