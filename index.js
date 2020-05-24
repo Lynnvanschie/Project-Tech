@@ -6,15 +6,19 @@ const app = express();
 // const camelCase = require('camelcase');
 // console.log(camelCase('test-this-package'));
 
-//Ejs aanroepen
+//Aanroepen packages
 const ejs = require("ejs");
+const bodyParser = require('body-parser');
+const slug = require('slug')
 
 express()
   .use(express.static('static')) //Serveert static files
+  .use(bodyParser.urlencoded({extended: true})) //Aanroepen bodyparser
   .set('view engine', 'ejs')
   .set('views', 'view')
   //Routes:
   .get('/', onhome)
+  .post('/', addFavorieten)
   .get('/favorieten', favorieten)
   .get('/:name-:age', parameters)
   .get('/about', about)
@@ -30,8 +34,23 @@ function onhome(req,res) {
 
 function favorieten(req,res) {
   res.render('favorieten', {filterSet: filterSet});
+  console.log(filterSet) //logt array filterSet in terminal om te zien welke nieuwe data er toegevoegd is aan de array
 }
 
+function addFavorieten(req,res) {
+  // var id = slug(req.body.name).toLowerCase()
+  //Dit kan je gebruiken om een naam met bv spaties te 'slugifien'
+
+   filterSet.push({ //Pusht een nieuw object in de filterSet array
+     name: req.body.name,
+     geslacht: req.body.geslacht,
+     leeftijdA: req.body.leeftijdA,
+     leeftijdB: req.body.leeftijdB,
+     afstand: req.body.afstand
+   })
+
+   res.redirect('/favorieten')
+}
 
 function parameters(req,res){
   res.send(req.params) //Geeft object met name:'', age:' '
@@ -58,31 +77,31 @@ function image(req,res) {
 let name = ['Andrea', 'Allison', 'Emily', 'Fiona', 'Sarah', 'Alex', 'Becky'];
 let filterSet = [
   {
-    name: '\'Naam voorkeur\'',
-    geslacht: 'vrouwen',
+    name: 'Filters 1',
+    geslacht: 'vrouw',
     leeftijdA: '22',
     leeftijdB: '30',
     afstand: '55'
   },
   {
-    name: '\'Naam voorkeur\'',
-    geslacht: 'vrouwen',
+    name: 'Filters 2',
+    geslacht: 'vrouw',
     leeftijdA: '25',
     leeftijdB: '55',
     afstand: '25'
   },
   {
-    name: '\'Naam voorkeur\'',
-    geslacht: 'vrouwen',
+    name: 'Filters 3',
+    geslacht: 'vrouw',
     leeftijdA: '29',
     leeftijdB: '34',
     afstand: '75'
   },
   {
-    name: '\'Naam voorkeur\'', 
-    geslacht: 'vrouwen',
+    name: 'Filters 4',
+    geslacht: 'vrouw',
     leeftijdA: '25',
     leeftijdB: '40',
     afstand: '40'
-  },
+  }
 ]

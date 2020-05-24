@@ -1,23 +1,27 @@
-<form action="/favorieten" method="post">
+<form action="/" method="post">
+  <div>
+    <label for="name">Naam:</label>
+    <input type="text" name="name" id="name">
+  </div>
   <div class="zoek">
     <p>Ik zoek:</p>
-    <input type="radio" name="zoek" value="man" id="man" checked />
+    <input type="radio" name="geslacht" value="man" id="man" checked />
     <label for="man">Man</label>
 
-    <input type="radio" name="zoek" value="vrouw" id="vrouw" />
+    <input type="radio" name="geslacht" value="vrouw" id="vrouw" />
     <label for="vrouw">Vrouw</label>
 
-    <input type="radio" name="zoek" value="beide" id="beide" />
+    <input type="radio" name="geslacht" value="beide" id="beide" />
     <label for="beide">Beide</label>
   </div>
   <div>
     <label for="afstand">Afstand:</label>
-    <input type="range" min="0" max="200" value="100" name="Afstand" id="afstand">
+    <input type="range" min="0" max="200" value="100" name="afstand" id="afstand">
   </div>
   <div class="slider">
     <label for="leeftijd">Leeftijd:</label>
-    <input type="range" min="18" max="79" value="42" name="leeftijd" id="leeftijd">
-    <input type="range" min="19" max="80" value="42" name="leeftijd" id="leeftijd">
+    <input type="range" min="18" max="79" value="42" name="leeftijdA" id="leeftijd">
+    <input type="range" min="19" max="80" value="42" name="leeftijdB" id="leeftijd">
   </div>
   <div id="inleveren">
     <input type="submit" name="" value="Sla op">
