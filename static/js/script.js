@@ -5,7 +5,7 @@ var filterblok = document.querySelector('.filters');
 
 function showKnop(){
 	filterblok.classList.toggle('showfilters');
-  console.log('testfunction')
+	console.log('testfunction');
 }
 
 filterknop.addEventListener('click', showKnop);
