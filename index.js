@@ -9,7 +9,17 @@ const app = express();
 //Aanroepen packages
 const ejs = require("ejs");
 const bodyParser = require('body-parser');
-const slug = require('slug')
+const slug = require('slug');
+const mongodb = require('mongodb');
+require('dotenv').config();
+
+var db = null
+var mongoUrl = process.env.DB_URL;
+
+mongodb.MongoClient.connect(mongoUrl, function (err,client){
+  if(err) throw err
+  db = client.db(process.env.DB_NAME)
+})
 
 express()
   .use(express.static('static')) //Serveert static files
