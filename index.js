@@ -13,14 +13,6 @@ const slug = require('slug');
 const mongodb = require('mongodb');
 require('dotenv').config();
 
-var db = null
-var mongoUrl = process.env.DB_URL;
-
-mongodb.MongoClient.connect(mongoUrl, function (err,client){
-  if(err) throw err
-  db = client.db(process.env.DB_NAME)
-})
-
 express()
   .use(express.static('static')) //Serveert static files
   .use(bodyParser.urlencoded({extended: true})) //Aanroepen bodyparser
@@ -36,6 +28,14 @@ express()
   .get('/video', video)
   .get('/image', image)
   .listen(1900)
+
+var db = null
+var mongoUrl = process.env.DB_URL;
+
+mongodb.MongoClient.connect(mongoUrl, {useUnifiedTopology: true}, function (err,client){
+  if(err) throw err
+  db = client.db(process.env.DB_NAME)
+})
 
 function onhome(req,res) {
   // res.status(200).send('<h1>Hello Client</h1>\n')
