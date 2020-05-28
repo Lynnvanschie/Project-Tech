@@ -3,26 +3,30 @@
 <%- include ('includes/head.ejs') %>
 
 <body>
-  <%- include ('includes/header.ejs') %>
+	<%- include ('includes/header.ejs') %>
 
-  <main>
-    <section>
-      <h1>Favorieten voorkeuren</h1>
-    </section>
+	<main>
+		<section>
+			<h1>Favorieten voorkeuren</h1>
+		</section>
 
-    <section id='fav-voorkeuren'>
-      <% for (var i = 0; i < filterSet.length; i++) { %>
+		<section id='fav-voorkeuren'>
+			<% for (var i = 0; i < filterSet.length; i++) { %>
 
-      <article>
-        <p><%= filterSet[i].name %>: <span><%= filterSet[i].geslacht %>, van <%= filterSet[i].leeftijdA %> tot <%= filterSet[i].leeftijdB %>, tot <%= filterSet[i].afstand %> km.</span></p>
-        <button>Selecteer</button>
-      </article>
+			<article>
 
-      <% } %>
-  </main>
+				<div>
+				<h2><%= filterSet[i].name %>:</h2>
+				<p><%= filterSet[i].geslacht %>, van <%= filterSet[i].leeftijdA %> tot <%= filterSet[i].leeftijdB %>, tot <%= filterSet[i].afstand %> km.</p>
+				</div>
+				<button>Selecteer</button>
+			</article>
 
-  <%- include ('includes/footer.ejs') %>
-  <script src="js/script.js"></script>
+			<% } %>
+	</main>
+
+	<%- include ('includes/footer.ejs') %>
+	<script src="js/script.js"></script>
 </body>
 
 </html>

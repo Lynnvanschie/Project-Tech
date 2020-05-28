@@ -1,30 +1,113 @@
 <form action="/" method="post">
-  <div>
-    <label for="name">Naam:</label>
-    <input type="text" name="name" id="name">
-  </div>
-  <div class="zoek">
-    <p>Ik zoek:</p>
-    <input type="radio" name="geslacht" value="man" id="man" checked />
-    <label for="man">Man</label>
+	<div class="zoek">
+		<p>Ik zoek:</p>
+		<input type="radio" name="geslacht" value="man" id="man" checked />
+		<label for="man">Man</label>
 
-    <input type="radio" name="geslacht" value="vrouw" id="vrouw" />
-    <label for="vrouw">Vrouw</label>
+		<input type="radio" name="geslacht" value="vrouw" id="vrouw" />
+		<label for="vrouw">Vrouw</label>
 
-    <input type="radio" name="geslacht" value="beide" id="beide" />
-    <label for="beide">Beide</label>
-  </div>
-  <div>
-    <label for="afstand">Afstand:</label>
-    <input type="range" min="0" max="200" value="100" name="afstand" id="afstand">
-  </div>
-  <div class="slider">
-    <label for="leeftijd">Leeftijd:</label>
-    <input type="range" min="18" max="79" value="42" name="leeftijdA" id="leeftijd">
-    <input type="range" min="19" max="80" value="42" name="leeftijdB" id="leeftijd">
-  </div>
-  <div id="inleveren">
-    <input type="submit" name="" value="Sla op">
-    <a href="/favorieten"><img src="./img/star.svg" alt=""> Favorieten</a>
-  </div>
+		<input type="radio" name="geslacht" value="beide" id="beide" />
+		<label for="beide">Beide</label>
+	</div>
+
+	<div>
+		<label for="afstand">Afstand: tot <input type="number" min="5" max="500" name="afstand" value="afstand" id="afstand"> km</label>
+
+	</div>
+
+	<div>
+		<label for="leeftijdA">Leeftijd: van</label>
+		<input type="number" min="18" max="79" name="leeftijdA" value="leeftijdA" id="leeftijd">
+
+		<label for="leeftijdB">tot</label>
+		<input type="number" min="19" max="80" name="leeftijdB" value="leeftijdB" id="leeftijd">
+	</div>
+
+	<div class="">
+		<p>Op zoek naar</p>
+		<div>
+			<input type="checkbox" id="serieus" name="opzoek">
+			<label for="serieus">Serieuze relatie</label>
+		</div>
+		<div>
+			<input type="checkbox" id="casual" name="opzoek">
+			<label for="casual">Casual fun</label>
+		</div>
+		<div>
+			<input type="checkbox" id="date" name="opzoek">
+			<label for="date">Een date</label>
+		</div>
+		<div>
+			<input type="checkbox" id="vrienden" name="opzoek">
+			<label for="vrienden">Vriendschap</label>
+		</div>
+	</div>
+
+	<div class="">
+		<p>Eigenschappen</p>
+		<div>
+			<input type="checkbox" id="ambitieus" name="eigenschap">
+			<label for="ambitieus">Ambitieus</label>
+		</div>
+		<div>
+			<input type="checkbox" id="oplettend" name="eigenschap">
+			<label for="oplettend">Oplettend</label>
+		</div>
+		<div>
+			<input type="checkbox" id="creatief" name="eigenschap">
+			<label for="creatief">Creatief</label>
+		</div>
+		<div>
+			<input type="checkbox" id="spontaan" name="eigenschap">
+			<label for="spontaan">Spontaan</label>
+		</div>
+		<div>
+			<input type="checkbox" id="optimistisch" name="eigenschap">
+			<label for="optimistisch">Optimistisch</label>
+		</div>
+		<div>
+			<input type="checkbox" id="avontuurlijk" name="eigenschap">
+			<label for="avontuurlijk">Avontuurlijk</label>
+		</div>
+		<div>
+			<input type="checkbox" id="sportief" name="eigenschap">
+			<label for="sportief">Sportief</label>
+		</div>
+		<div>
+			<input type="checkbox" id="intelligent" name="eigenschap" >
+			<label for="intelligent">Intelligent</label>
+		</div>
+	</div>
+
+	<div class="">
+		<p>Interesses</p>
+		<div>
+			<input type="checkbox" id="boeken" name="interesses">
+			<label for="boeken">Boeken</label>
+		</div>
+		<div>
+			<input type="checkbox" id="schilderen" name="interesses">
+			<label for="schilderen">Schilderen</label>
+		</div>
+		<div>
+			<input type="checkbox" id="sport" name="interesses">
+			<label for="sport">Sport</label>
+		</div>
+		<div>
+			<input type="checkbox" id="muziek" name="interesses">
+			<label for="muziek">Muziek</label>
+		</div>
+		<div>
+			<input type="checkbox" id="films" name="interesses">
+			<label for="films">Films</label>
+		</div>
+	</div>
+
+	<div>
+		<label for="name">Naam voorkeuren:</label>
+		<input type="text" name="name" id="name">
+	</div>
+
+	<input type="submit" name="" value="Sla op">
 </form>
