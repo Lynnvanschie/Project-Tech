@@ -34,32 +34,24 @@ express()
 let name = ['Andrea', 'Allison', 'Emily', 'Fiona', 'Sarah', 'Alex', 'Becky'];
 let filterSet = [{
 	name: 'Filters 1',
-	geslacht: 'vrouw',
+	geslacht: 'Vrouw',
 	leeftijdA: '22',
 	leeftijdB: '30',
-	afstand: '55'
+	afstand: '55',
+	opzoek: ['Serieuze relatie'],
+	eigenschap: ['Creatief', 'Spontaan'],
+	interesse: ['Boeken', 'Sport']
 },
 {
 	name: 'Filters 2',
-	geslacht: 'vrouw',
+	geslacht: 'Vrouw',
 	leeftijdA: '25',
 	leeftijdB: '55',
-	afstand: '25'
+	afstand: '25',
+	opzoek: ['Serieuze relatie', 'Vriendschap'],
+	eigenschap: ['Ambitieus', 'Optimistisch', 'Avontuurlijk'],
+	interesse: ['Muziek', 'Schilderen']
 },
-{
-	name: 'Filters 3',
-	geslacht: 'vrouw',
-	leeftijdA: '29',
-	leeftijdB: '34',
-	afstand: '75'
-},
-{
-	name: 'Filters 4',
-	geslacht: 'vrouw',
-	leeftijdA: '25',
-	leeftijdB: '40',
-	afstand: '40'
-}
 ];
 var db = null;
 var mongoUrl = process.env.DB_URL;
@@ -90,7 +82,10 @@ function addFilters(req, res) {
 		geslacht: req.body.geslacht,
 		leeftijdA: req.body.leeftijdA,
 		leeftijdB: req.body.leeftijdB,
-		afstand: req.body.afstand
+		afstand: req.body.afstand,
+		opzoek: req.body.opzoek,
+		eigenschap: req.body.eigenschap,
+		interesse: req.body.interesse,
 	});
 
 	res.redirect('/favorieten');
