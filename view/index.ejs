@@ -6,13 +6,11 @@
 	<%- include ('includes/header.ejs') %>
 
 	<main>
-		<img src="./img/filter.svg" alt="filter" class="f-knop">
-		<section class="filters">
-			<%- include ('filter.ejs') %>
-			<a href="/favorieten"><img src="./img/star.svg" alt=""> Favorieten</a>
+		<section id="filterbar">
+			<h2>Geselecteerde filters: <span>Geen.</span></h2>
+			<a href="/favorieten">Selecteer filterset</a>
 		</section>
 
-		<h2>Geselecteerde voorkeuren: <span>Geen.</span></h2>
 		<section id='overzicht'>
 			<article>
 				<img src="./img/profilepicture.jpg" alt="vrouw">

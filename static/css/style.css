@@ -10,18 +10,36 @@ body {
 }
 
 h1 {
-	margin: 4rem;
 	font-size: 2rem;
 }
 
 h2 {
 	font-size: 1.4rem;
 	font-weight: 400;
-	margin: 2em 0 0 8vw;
 }
 
 span {
 	color: #0099CC;
+}
+
+/* Link knoppen */
+section a {
+	background-color: white;
+	text-decoration: none;
+	color: black;
+	padding: 0.5rem 1.5rem;
+	font-size: 1.1rem;
+	border-radius: 10px;
+	border: 3px solid #0099CC;
+}
+
+section a:hover, section a:focus {
+	cursor: pointer;
+	background: #0099CC;
+	color: white;
+	padding: 0.7rem 1.7rem;
+	border: none;
+	outline: none;
 }
 
 /* Navigatie */
@@ -51,173 +69,15 @@ nav li:hover a {
 	color: black;
 }
 
-/* Filter knop */
-.f-knop {
-	position: absolute;
+/* Filterbar */
+#filterbar {
 	background-color: white;
-	width: 3em;
-	height: 3em;
-	top: 7em;
-	right: 8vw;
-	border: 3px solid black;
-	border-radius: 6px;
-	padding: 0.3rem;
-	z-index: 2;
-}
-
-.f-knop:hover, .f-knop:focus {
-	background-color: #e2e2e2;
-	cursor: pointer;
-}
-
-/* Filterblok */
-.filters {
-	/* position: absolute; */
-	position: relative;
-	width: 100%;
-	/* margin-left: -80em; */
-	background-color: white;
-	padding: 2rem 8vw 1rem 8vw;
-	font-size: 1.2rem;
-	transition: margin .2s cubic-bezier(0, .88, 0, .99);
-}
-
-/* .showfilters {
-	position: relative;
-	margin-left: 0rem;
-} */
-
-.filters div {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	padding: 0.75rem;
+	margin: 3rem 8vw 0 8vw;
+	padding: 1.5rem 2rem;
 }
-
-/* .filters form {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-	grid-gap: 0 1rem;
-	margin-top: 1rem;
-}
-
-.filters p, .filters label {
-	padding: 0 1rem 0 0.5rem;
-}
-
-.filters input[type="radio"] {
-	/* Bron weghalen radiobutton: https://markheath.net/post/customize-radio-button-css
-	opacity: 0;
-	width: 0;
-}
-
-.filters .zoek label {
-	background-color: white;
-	padding: 0.5rem 1.5rem;
-	margin-right: 1rem;
-	border-radius: 10px;
-	border: 2px solid #FC1D6C;
-}
-
-.filters .zoek label:hover {
-	cursor: pointer;
-	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
-	/*Bron: https://cssgradient.io/
-	color: white;
-	padding: 0.6rem 1.6rem;
-	border: none;
-}
-
-.filters input[type="radio"]:checked+label {
-	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
-	/*Bron: https://cssgradient.io/
-	color: white;
-	padding: 0.6rem 1.6rem;
-	border: none;
-} */
-
-/* Range sliders */
-/*.filters input[type=range] {
-	/* Bron: https://www.w3schools.com/howto/howto_js_rangeslider.asp
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	height: 7px;
-	border-radius: 5px;
-	background: lightgrey;
-	width: 100%;
-	opacity: 0.8;
-}
-
-.filters input[type=range]:hover {
-	opacity: 1;
-}
-
-.filters input[type=range]:focus {
-	outline: none;
-}
-
-.filters input[type=range]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 1rem;
-	height: 1rem;
-	border-radius: 10px;
-	background: #FC1D6C;
-	cursor: pointer;
-}
-
-.filters input[type=range]::-moz-range-thumb {
-	width: 1rem;
-	height: 1rem;
-	border-radius: 10px;
-	background: #FC1D6C;
-	cursor: pointer;
-	border: none;
-} */
-
-/* Knoppen formulier */
-/* .filters #inleveren {
-	justify-content: flex-end;
-}
-
-.filters input[type=submit] {
-	font-size: 1.3rem;
-	background-color: #FF5D31;
-	color: white;
-	padding: 0.5rem 1.5rem;
-	border-radius: 20px;
-	border: none;
-	cursor: pointer;
-	margin: 0 1rem;
-	transition: color .2s ease;
-}
-
-.filters input[type=submit]:hover {
-	background-color: #0099CC;
-	color: white;
-	cursor: pointer;
-}
-*/
-.filters img {
-	width: 1.5em;
-	height: 1.5em;
-	margin-right: 0.5rem;
-	background-color: black;
-}
-/*
-.filters a {
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-	color: white;
-	border-radius: 10px;
-	padding: 0.5rem;
-	background-color: #0099CC;
-}
-
-.filters a:hover {
-	background-color: #FFD200;
-} */
 
 /* Overzicht */
 #overzicht {
@@ -234,9 +94,7 @@ nav li:hover a {
 
 #overzicht article {
 	background-color: white;
-	/* max-width: 30vw;
-	margin-bottom: 2em;
-	margin-left: 2em; */
+	max-width: 40vw;
 }
 
 #overzicht img {
@@ -251,6 +109,14 @@ nav li:hover a {
 }
 
 /* Favorieten voorkeuren */
+#add {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 4rem;
+}
+
 #fav-voorkeuren {
 	margin: 4rem;
 }
@@ -275,6 +141,7 @@ nav li:hover a {
 
 #fav-voorkeuren button:hover, #fav-voorkeuren button:focus {
 	cursor: pointer;
+	background-color: rgba(252, 29, 108, 1);
 	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
 	color: white;
 	padding: 0.6rem 1.6rem;
@@ -282,7 +149,7 @@ nav li:hover a {
 	outline: none;
 }
 
-#fav-voorkeuren div{
+#fav-voorkeuren div {
 	margin: 1rem;
 }
 
@@ -298,4 +165,68 @@ nav li:hover a {
 	font-size: 1.3em;
 	margin: 0;
 	color: #0099CC;
+}
+
+/* Filters */
+form {
+	background-color: white;
+	margin: 2rem 8vw 2rem 8vw;
+	padding: 2rem;
+	font-size: 1.2rem;
+	transition: margin .2s cubic-bezier(0, .88, 0, .99);
+}
+
+form div {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+input[type="radio"] {
+	/* Bron weghalen radiobutton: https://markheath.net/post/customize-radio-button-css */
+	opacity: 0;
+	width: 0;
+}
+
+.zoek label {
+	background-color: white;
+	padding: 0.5rem 1.5rem;
+	margin-right: 1rem;
+	border-radius: 10px;
+	border: 2px solid #FC1D6C;
+}
+
+.zoek label:hover {
+	cursor: pointer;
+	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
+	/*Bron: https://cssgradient.io/ */
+	color: white;
+	padding: 0.6rem 1.6rem;
+	border: none;
+}
+
+input[type="radio"]:checked+label {
+	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
+	/*Bron: https://cssgradient.io/ */
+	color: white;
+	padding: 0.6rem 1.6rem;
+	border: none;
+}
+
+input[type=submit] {
+	font-size: 1.3rem;
+	background-color: #FF5D31;
+	color: white;
+	padding: 0.5rem 1.5rem;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	margin: 0 1rem;
+	transition: color .2s ease;
+}
+
+input[type=submit]:hover {
+	background-color: #0099CC;
+	color: white;
+	cursor: pointer;
 }
