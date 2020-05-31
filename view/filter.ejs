@@ -20,21 +20,30 @@
 					<label for="beide">Beide</label>
 				</div>
 			</div>
+			<hr>
 
 			<div class="container">
-				<p>Afstand: </p>
 				<div>
-					<label for="afstand">tot <input type="number" min="5" max="500" name="afstand" value="afstand" id="afstand"> km</label>
+					<p>Afstand: </p>
+					<p class="formcontext">Vul een getal in tussen de 5 en 500.</p>
+				</div>
+				<div>
+					<label for="afstand">tot <input type="number" min="5" max="500" name="afstand" value="afstand" id="afstand" required> km</label>
 				</div>
 			</div>
+			<hr>
 
 			<div class="container">
-				<p>Leeftijd: </p>
 				<div>
-					<label for="leeftijdA">van <input type="number" min="18" max="79" name="leeftijdA" value="leeftijdA" id="leeftijdA"></label>
-					<label for="leeftijdB">tot <input type="number" min="19" max="80" name="leeftijdB" value="leeftijdB" id="leeftijdB"></label>
+					<p>Leeftijd: </p>
+					<p class="formcontext">Vul getallen in tussen de 18 en 80.</p>
+				</div>
+				<div>
+					<label for="leeftijdA">van <input type="number" min="18" max="79" name="leeftijdA" value="leeftijdA" id="leeftijdA" required></label>
+					<label for="leeftijdB">tot <input type="number" min="19" max="80" name="leeftijdB" value="leeftijdB" id="leeftijdB" required></label>
 				</div>
 			</div>
+			<hr>
 
 			<div class="container">
 				<p>Op zoek naar:</p>
@@ -57,6 +66,7 @@
 					</div>
 				</div>
 			</div>
+			<hr>
 
 			<div class="container">
 				<p>Eigenschappen:</p>
@@ -95,6 +105,7 @@
 					</div>
 				</div>
 			</div>
+			<hr>
 
 			<div class="container">
 				<p>Interesses:</p>
@@ -125,11 +136,16 @@
 					</div>
 				</div>
 			</div>
+			<hr>
 
 			<div class="container">
-				<label for="name">Naam voorkeuren:</label>
-				<input type="text" name="name" id="name">
+				<div>
+					<label for="name">Naam voorkeuren:</label>
+					<p class="formcontext">Gebruik ten minste 5 karakters.</p>
+				</div>
+				<input type="text" name="name" id="name" minlength="5" required>
 			</div>
+			<hr>
 
 			<input type="submit" name="submit" value="Sla op">
 		</form>
