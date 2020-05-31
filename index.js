@@ -24,11 +24,6 @@ express()
 	.get('/add', add)
 	.post('/', addFilters)
 	.get('/favorieten', favorieten)
-	.get('/:name-:age', parameters)
-	.get('/about', about)
-	.get('/audio', audio)
-	.get('/video', video)
-	.get('/image', image)
 	.listen(1900);
 
 let name = ['Andrea', 'Allison', 'Emily', 'Fiona', 'Sarah', 'Alex', 'Becky'];
@@ -53,11 +48,15 @@ let filterSet = [{
 	interesse: ['Muziek', 'Schilderen']
 },
 ];
+
 var db = null;
 var mongoUrl = process.env.DB_URL;
 
-mongodb.MongoClient.connect(mongoUrl, {useUnifiedTopology: true}, function(err, client) {
-	if (err){
+//Verbinden met mongodb
+mongodb.MongoClient.connect(mongoUrl, {
+	useUnifiedTopology: true
+}, function(err, client) {
+	if (err) {
 		throw err;
 	}
 	db = client.db(process.env.DB_NAME);
@@ -74,10 +73,7 @@ function add(req, res) {
 }
 
 function addFilters(req, res) {
-	// var id = slug(req.body.name).toLowerCase()
-	//Dit kan je gebruiken om een naam met bv spaties te 'slugifien'
-
-	filterSet.push({ //Pusht een nieuw object in de filterSet array
+	db.collection('filterSet').insertOne({
 		name: req.body.name,
 		geslacht: req.body.geslacht,
 		leeftijdA: req.body.leeftijdA,
@@ -85,9 +81,8 @@ function addFilters(req, res) {
 		afstand: req.body.afstand,
 		opzoek: req.body.opzoek,
 		eigenschap: req.body.eigenschap,
-		interesse: req.body.interesse,
+		interesse: req.body.interesse
 	});
-
 	res.redirect('/favorieten');
 }
 
@@ -97,32 +92,4 @@ function favorieten(req, res) {
 	});
 	console.log(filterSet);
 	//logt array filterSet in terminal om te zien welke nieuwe data er toegevoegd is aan de array
-}
-
-function parameters(req, res) {
-	res.send(req.params); //Geeft object met name:'', age:' '
-}
-
-function about(req, res) {
-	res.status(200).send('<h1>This is a server</h1>\n');
-}
-
-function audio(req, res) {
-	res.sendFile('./static/audio/Adoreyou.mp3', {
-		root: __dirname
-	});
-	//.sendFile serveert een bestand.
-	//De root moet aangegeven worden. __dirname is een globale node.js variabele die het 'currently running file' aangeeft.
-}
-
-function video(req, res) {
-	res.sendFile('/static/video/Falling.mp4', {
-		root: __dirname
-	});
-}
-
-function image(req, res) {
-	res.sendFile('/static/img/landschap.jpg', {
-		root: __dirname
-	});
 }
