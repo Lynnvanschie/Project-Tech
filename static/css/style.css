@@ -24,9 +24,9 @@ span {
 
 /* Link knoppen */
 section a {
-	background-color: white;
+	background-color: #0099CC;
 	text-decoration: none;
-	color: black;
+	color: white;
 	padding: 0.5rem 1.5rem;
 	font-size: 1.1rem;
 	border-radius: 10px;
@@ -35,10 +35,9 @@ section a {
 
 section a:hover, section a:focus {
 	cursor: pointer;
-	background: #0099CC;
-	color: white;
-	padding: 0.7rem 1.7rem;
-	border: none;
+	background: white;
+	color: black;
+	border: 3px solid #0099CC;
 	outline: none;
 }
 
@@ -168,18 +167,39 @@ nav li:hover a {
 }
 
 /* Filters */
-form {
-	background-color: white;
-	margin: 2rem 8vw 2rem 8vw;
-	padding: 2rem;
-	font-size: 1.2rem;
-	transition: margin .2s cubic-bezier(0, .88, 0, .99);
+#filterpage main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3rem 0;
 }
 
-form div {
+form {
 	display: flex;
-	align-items: center;
-	padding: 0.5rem;
+	flex-direction: column;
+	background-color: white;
+	margin: auto;
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	margin: 3rem 8vw;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding: 1rem 0.5rem;
+}
+
+.container>div{
+	margin-bottom: 1rem;
+}
+
+.container p, .container>label {
+	min-width: 13em;
+	margin-bottom: 1rem;
+	font-weight: 500;
 }
 
 input[type="radio"] {
@@ -188,40 +208,85 @@ input[type="radio"] {
 	width: 0;
 }
 
-.zoek label {
-	background-color: white;
-	padding: 0.5rem 1.5rem;
-	margin-right: 1rem;
+.geslacht label {
 	border-radius: 10px;
 	border: 2px solid #FC1D6C;
+	padding: 0.5rem 1.5rem;
+	margin: 0.5rem 0;
 }
 
-.zoek label:hover {
+.geslacht label:hover , input[type="radio"]:checked+label{
 	cursor: pointer;
+	background-color: rgba(252, 29, 108);
 	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
 	/*Bron: https://cssgradient.io/ */
 	color: white;
-	padding: 0.6rem 1.6rem;
+	padding: 0.6rem 1.65rem;
 	border: none;
 }
 
-input[type="radio"]:checked+label {
-	background: linear-gradient(94deg, rgba(252, 29, 108, 1) 28%, rgba(255, 93, 49, 1) 72%);
-	/*Bron: https://cssgradient.io/ */
-	color: white;
-	padding: 0.6rem 1.6rem;
+input[type="number"], input[type="text"]{
+	margin: 0 0.5rem;
+	background-color: #E4E4E4;
 	border: none;
+	border-radius: 10px;
+	padding: 0.8rem 1rem;
+	font-size: 1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:hover, input[type="text"]:hover, input[type="number"]:focus, input[type="text"]:focus{
+	outline: none;
+	background-color: #C1C1C1;
+}
+
+
+input[type='checkbox']{ /*Bron:https://www.youtube.com/watch?v=K1sL3wPisJw;*/
+	position: relative;
+	top: 0.3rem;
+	width: 1.8em;
+	height: 1.8em;
+	-webkit-appearance: none;
+	outline: none;
+	transition: .5s;
+	margin-right: 1em;
+	margin-bottom: 0.5em;
+}
+
+input[type='checkbox']:before{
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 3px solid black;
+	transition:.5s;
+}
+
+input:checked[type='checkbox']:before{
+	border-left: none;
+	border-top: none;
+	width: 1em;
+	border-color: #FC1D6C;
+	transform: rotate(45deg) translate(0.3rem, -0.3rem);
 }
 
 input[type=submit] {
+	align-self: flex-end;
 	font-size: 1.3rem;
 	background-color: #FF5D31;
 	color: white;
-	padding: 0.5rem 1.5rem;
-	border-radius: 20px;
+	padding: 0.7rem 1.5rem;
+	border-radius: 10px;
 	border: none;
 	cursor: pointer;
-	margin: 0 1rem;
+	margin: 1.5rem 1rem 1rem 2rem;
 	transition: color .2s ease;
 }
 
