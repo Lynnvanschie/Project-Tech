@@ -28,25 +28,25 @@ express()
 
 let name = ['Andrea', 'Allison', 'Emily', 'Fiona', 'Sarah', 'Alex', 'Becky'];
 let filterSet = [{
-	name: 'Filters 1',
-	geslacht: 'Vrouw',
-	leeftijdA: '22',
-	leeftijdB: '30',
-	afstand: '55',
-	opzoek: ['Serieuze relatie'],
-	eigenschap: ['Creatief', 'Spontaan'],
-	interesse: ['Boeken', 'Sport']
-},
-{
-	name: 'Filters 2',
-	geslacht: 'Vrouw',
-	leeftijdA: '25',
-	leeftijdB: '55',
-	afstand: '25',
-	opzoek: ['Serieuze relatie', 'Vriendschap'],
-	eigenschap: ['Ambitieus', 'Optimistisch', 'Avontuurlijk'],
-	interesse: ['Muziek', 'Schilderen']
-},
+		name: 'Filters 1',
+		geslacht: 'Vrouw',
+		leeftijdA: '22',
+		leeftijdB: '30',
+		afstand: '55',
+		opzoek: ['Serieuze relatie'],
+		eigenschap: ['Creatief', 'Spontaan'],
+		interesse: ['Boeken', 'Sport']
+	},
+	{
+		name: 'Filters 2',
+		geslacht: 'Vrouw',
+		leeftijdA: '25',
+		leeftijdB: '55',
+		afstand: '25',
+		opzoek: ['Serieuze relatie', 'Vriendschap'],
+		eigenschap: ['Ambitieus', 'Optimistisch', 'Avontuurlijk'],
+		interesse: ['Muziek', 'Schilderen']
+	},
 ];
 
 var db = null;
@@ -86,10 +86,14 @@ function addFilters(req, res) {
 	res.redirect('/favorieten');
 }
 
-function favorieten(req, res) {
-	res.render('favorieten', {
-		filterSet: filterSet
-	});
-	console.log(filterSet);
-	//logt array filterSet in terminal om te zien welke nieuwe data er toegevoegd is aan de array
+function favorieten(req, res, next) {
+	db.collection('filterSet').find().toArray(done);
+
+	function done(err, data) {
+		if (err) {
+			next(err);
+		} else {
+			res.render('favorieten.ejs', {filterSet: data});
+		}
+	}
 }
