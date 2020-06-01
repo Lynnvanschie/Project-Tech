@@ -16,13 +16,17 @@
 
 			<article>
 				<div>
-				<h2><%= filterSet[i].name %>:</h2>
-				<p><%= filterSet[i].geslacht %>, van <%= filterSet[i].leeftijdA %> tot <%= filterSet[i].leeftijdB %>, tot <%= filterSet[i].afstand %> km.</p>
-				<p><%= filterSet[i].opzoek %></p>
-				<p><%= filterSet[i].eigenschap %></p>
-				<p><%= filterSet[i].interesse %></p>
+					<h2><%= filterSet[i].name %>:</h2>
+					<p><%= filterSet[i].geslacht %>, van <%= filterSet[i].leeftijdA %> tot <%= filterSet[i].leeftijdB %>, tot <%= filterSet[i].afstand %> km.</p>
+					<p><%= filterSet[i].opzoek %></p>
+					<p><%= filterSet[i].eigenschap %></p>
+					<p><%= filterSet[i].interesse %></p>
 				</div>
-				<button>Selecteer</button>
+				<div class="knoppen">
+					<button>Selecteer</button>
+					<button>Pas aan</button>
+					<button id="delete">Verwijder</button>
+				</div>
 			</article>
 
 			<% } %>

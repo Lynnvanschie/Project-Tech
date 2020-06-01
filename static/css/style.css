@@ -26,6 +26,7 @@ span {
 section a {
 	background-color: #0099CC;
 	text-decoration: none;
+	text-align: center;
 	color: white;
 	padding: 0.5rem 1.5rem;
 	font-size: 1.1rem;
@@ -113,11 +114,15 @@ nav li:hover a {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	margin: 4rem;
+	margin: 4rem 8vw;
 }
 
 #fav-voorkeuren {
 	margin: 4rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 #fav-voorkeuren article {
@@ -126,13 +131,18 @@ nav li:hover a {
 	align-items: center;
 	background-color: white;
 	padding: 1rem;
-	margin-bottom: 2em;
+	margin: 1em;
+}
+
+.knoppen{
+	display: flex;
+	flex-direction: column;
 }
 
 #fav-voorkeuren button {
 	background-color: white;
 	padding: 0.5rem 1.5rem;
-	margin-right: 1rem;
+	margin: 0.2rem 1rem;
 	font-size: 1.1rem;
 	border-radius: 10px;
 	border: 3px solid #FC1D6C;
@@ -146,6 +156,19 @@ nav li:hover a {
 	padding: 0.6rem 1.6rem;
 	border: none;
 	outline: none;
+}
+
+#fav-voorkeuren #delete {
+	border: 3px solid red;
+	background-color: rgba(256, 0, 0, 0.5);
+	color: white;
+}
+
+#fav-voorkeuren #delete:hover, #fav-voorkeuren #delete:focus {
+	border: 3px solid red;
+	background: rgba(256,0,0,0.3);
+	color: red;
+	padding: 0.5rem 1.5rem;
 }
 
 #fav-voorkeuren div {
@@ -184,7 +207,7 @@ form {
 	margin: 3rem 8vw;
 }
 
-hr{
+hr {
 	height: 2px;
 	border: none;
 	background-color: lightgrey;
@@ -202,7 +225,7 @@ hr{
 	min-width: 13em;
 }
 
-.formcontext{
+.formcontext {
 	font-weight: 300;
 	font-size: 0.8rem;
 }
