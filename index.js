@@ -1,22 +1,25 @@
 //Express aanroepen
 const express = require('express');
 
-//camelcase
-// const camelCase = require('camelcase');
-// console.log(camelCase('test-this-package'));
-
 //Aanroepen packages
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 // const slug = require('slug');
 const mongodb = require('mongodb');
+const session = require('express-session');
 require('dotenv').config();
+
 
 express()
 	.use(express.static('static')) //Serveert static files
 	.use(bodyParser.urlencoded({
 		extended: true
 	})) //Aanroepen bodyparser
+	.use(session({
+		resave: false,
+		saveUninitialized: true,
+		secret: process.env.SESSION_SECRET
+	}))
 	.set('view engine', 'ejs')
 	.set('views', 'view')
 	//Routes:
@@ -41,10 +44,24 @@ mongodb.MongoClient.connect(mongoUrl, {
 	db = client.db(process.env.DB_NAME);
 });
 
-function onhome(req, res) {
-	res.render('index', {
-		name: name
-	});
+function onhome(req, res, next) {
+	// res.render('index', {
+	// 	name: name,
+	// 	// user: user
+	// });
+	//
+	db.collection('user').find().toArray(done);
+
+	function done(err, data) {
+		if (err) {
+			next(err);
+		} else {
+			res.render('index.ejs', {
+				name: name,
+				user: data
+			});
+		}
+	}
 }
 
 function add(req, res) {

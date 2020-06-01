@@ -11,6 +11,15 @@
 			<a href="/favorieten">Selecteer filterset</a>
 		</section>
 
+		<form action="/">
+			<select id="users" name="users">
+				<% for (var i = 0; i < user.length; i++) { %>
+						<option value="<%= user[i].username %>"><%= user[i].username %></option>
+				<% } %>
+			</select>
+			<input type="submit">
+		</form>
+
 		<section id='overzicht'>
 			<article>
 				<img src="./img/profilepicture.jpg" alt="vrouw">
@@ -36,7 +45,6 @@
 				<img src="./img/profilepicture.jpg" alt="vrouw">
 				<p><%= name[5] %></p>
 			</article>
-
 	</main>
 	<%- include ('includes/footer.ejs') %>
 	<script src="js/script.js"></script>
