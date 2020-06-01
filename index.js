@@ -2,7 +2,7 @@
 const express = require('express');
 
 //Aanroepen packages
-const ejs = require('ejs');
+// const ejs = require('ejs');
 const bodyParser = require('body-parser');
 // const slug = require('slug');
 const mongodb = require('mongodb');
@@ -45,21 +45,21 @@ mongodb.MongoClient.connect(mongoUrl, {
 });
 
 function onhome(req, res, next) {
-	// res.render('index', {
-	// 	name: name,
-	// 	// user: user
-	// });
-	//
 	db.collection('user').find().toArray(done);
 
-	function done(err, data) {
+	function done(err, username) {
 		if (err) {
 			next(err);
 		} else {
 			res.render('index.ejs', {
 				name: name,
-				user: data
+				user: username
 			});
+
+			req.session.user = {
+				user: username
+			};
+			console.log(req.session.user);
 		}
 	}
 }
