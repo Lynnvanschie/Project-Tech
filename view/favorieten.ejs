@@ -2,12 +2,16 @@
 <html lang="en">
 <%- include ('includes/head.ejs') %>
 
-<body>
+<body id="favorietenpage">
 	<%- include ('includes/header.ejs') %>
 
 	<main>
 		<section id="add">
-			<h1>Favorieten filtersets</h1>
+			<div>
+				<h1>Favorieten filtersets</h1>
+				<p>Selecteer, bewerk of verwijder hier jouw filtersets.</p>
+			</div>
+
 			<a href="/add">Nieuw filterset</a>
 		</section>
 
@@ -17,7 +21,7 @@
 			<article>
 				<div>
 					<h2><%= filterSet[i].name %>:</h2>
-					<p><%= filterSet[i].geslacht %>, van <%= filterSet[i].leeftijdA %> tot <%= filterSet[i].leeftijdB %>, tot <%= filterSet[i].afstand %> km.</p>
+					<p><%= filterSet[i].geslacht %>, van <%= filterSet[i].leeftijdA %> tot <%= filterSet[i].leeftijdB %> jaar, tot <%= filterSet[i].afstand %> km.</p>
 					<p><%= filterSet[i].opzoek %></p>
 					<p><%= filterSet[i].eigenschap %></p>
 					<p><%= filterSet[i].interesse %></p>
@@ -30,6 +34,7 @@
 			</article>
 
 			<% } %>
+		</section>
 	</main>
 
 	<%- include ('includes/footer.ejs') %>

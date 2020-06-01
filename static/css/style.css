@@ -22,6 +22,13 @@ span {
 	color: #0099CC;
 }
 
+footer {
+	background-color: black;
+	color: white;
+	padding: 1rem;
+	text-align: right;
+}
+
 /* Link knoppen */
 section a {
 	background-color: #0099CC;
@@ -94,7 +101,7 @@ nav li:hover a {
 
 #overzicht article {
 	background-color: white;
-	max-width: 40vw;
+	max-width: 35vw;
 }
 
 #overzicht img {
@@ -109,12 +116,21 @@ nav li:hover a {
 }
 
 /* Favorieten voorkeuren */
+#favorietenpage main {
+	min-height: 75vh;
+}
+
 #add {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	margin: 4rem 8vw;
+}
+
+#add p {
+	font-size: 1.2em;
+	margin-top: 1rem;
 }
 
 #fav-voorkeuren {
@@ -127,14 +143,17 @@ nav li:hover a {
 
 #fav-voorkeuren article {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	background-color: white;
 	padding: 1rem;
 	margin: 1em;
 }
 
-.knoppen{
+#fav-voorkeuren p {
+	padding-bottom: 0.2rem;
+}
+
+.knoppen {
 	display: flex;
 	flex-direction: column;
 }
@@ -166,7 +185,7 @@ nav li:hover a {
 
 #fav-voorkeuren #delete:hover, #fav-voorkeuren #delete:focus {
 	border: 3px solid red;
-	background: rgba(256,0,0,0.3);
+	background: rgba(256, 0, 0, 0.3);
 	color: red;
 	padding: 0.5rem 1.5rem;
 }
@@ -333,4 +352,29 @@ input[type=submit]:hover {
 	background-color: #0099CC;
 	color: white;
 	cursor: pointer;
+}
+
+/* Resonsive */
+@media (max-width: 775px) {
+	#overzicht article {
+		max-width: 100vw;
+	}
+}
+
+@media (max-width: 775px) {
+	input[type="radio"] {
+		margin: 2rem 0 1rem 0;
+	}
+}
+
+@media (max-width: 690px) {
+	input[type="number"] {
+		margin: 1rem 0;
+	}
+}
+
+@media (max-width: 651px) {
+	input[type="text"] {
+		margin: 1rem 0;
+	}
 }
