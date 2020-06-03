@@ -26,29 +26,38 @@ $ npm install
 ```
 
 ## Gebruikte bronnen
-Installeren npm en packages:
-https://www.youtube.com/watch?v=tdqXTNqNrr0
-Installatie Express:
-https://expressjs.com/
-Static files in express:
-https://expressjs.com/en/starter/static-files.html
-https://stackabuse.com/serving-static-files-with-node-and-express-js/
-Aanmaken van routes:
-https://expressjs.com/en/guide/routing.html
-Templating engine:
-https://ejs.co/#install
-https://ejs.co/#features
-https://expressjs.com/en/guide/using-template-engines.html
-https://www.youtube.com/watch?v=VM-2xSaDxJc
-Installeren body-parser:
-https://www.npmjs.com/package/body-parser
-Opzetten Mongo Atlas:
-https://docs.atlas.mongodb.com/getting-started/
-Verbinden met mongodb:
-https://docs.mongodb.com/guides/server/drivers/
-Werken met mongodb:
-https://docs.mongodb.com/manual/reference/method/db.collection.find/
-https://examples.javacodegeeks.com/software-development/mongodb/mongodb-toarray-example/
-https://docs.mongodb.com/guides/server/insert/
-Sessions:
-https://www.npmjs.com/package/express-session
+Installeren npm en packages:  
+https://www.youtube.com/watch?v=tdqXTNqNrr0  
+
+Installatie Express:  
+https://expressjs.com/  
+
+Static files in express:  
+https://expressjs.com/en/starter/static-files.html  
+https://stackabuse.com/serving-static-files-with-node-and-express-js/  
+
+Aanmaken van routes:  
+https://expressjs.com/en/guide/routing.html  
+
+Templating engine:  
+https://ejs.co/#install  
+https://ejs.co/#features  
+https://expressjs.com/en/guide/using-template-engines.html  
+https://www.youtube.com/watch?v=VM-2xSaDxJc  
+
+Installeren body-parser:  
+https://www.npmjs.com/package/body-parser  
+
+Opzetten Mongo Atlas:  
+https://docs.atlas.mongodb.com/getting-started/  
+
+Verbinden met mongodb:  
+https://docs.mongodb.com/guides/server/drivers/  
+
+Werken met mongodb:  
+https://docs.mongodb.com/manual/reference/method/db.collection.find/  
+https://examples.javacodegeeks.com/software-development/mongodb/mongodb-toarray-example/  
+https://docs.mongodb.com/guides/server/insert/  
+
+Sessions:  
+https://www.npmjs.com/package/express-session  
