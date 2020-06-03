@@ -39,9 +39,6 @@ var mongoUrl = process.env.DB_URL;
 mongodb.MongoClient.connect(mongoUrl, {
 	useUnifiedTopology: true
 }, function(err, client) {
-	if (err) {
-		throw err;
-	}
 	db = client.db(process.env.DB_NAME);
 });
 
