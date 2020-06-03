@@ -27,6 +27,7 @@ express()
 	.get('/add', add)
 	.post('/', addFilters)
 	.get('/favorieten', favorieten)
+	// .delete('/:id', deleteFilterSet)
 	.listen(1900);
 
 let name = ['Andrea', 'Allison', 'Emily', 'Fiona', 'Sarah', 'Alex', 'Becky'];
@@ -44,23 +45,20 @@ mongodb.MongoClient.connect(mongoUrl, {
 	db = client.db(process.env.DB_NAME);
 });
 
-function onhome(req, res, next) {
+function onhome(req, res) {
 	db.collection('user').find().toArray(done);
 
 	function done(err, username) {
-		if (err) {
-			next(err);
-		} else {
-			res.render('index.ejs', {
-				name: name,
-				user: username
-			});
+		res.render('index.ejs', {
+			name: name,
+			user: username
+		});
+	}
 
-			req.session.user = {
-				user: username
-			};
-			console.log(req.session.user);
-		}
+	req.session.user = db.collection('user').findOne(req.body.username, test);
+
+	function test() {
+		return console.log(req.session.user);
 	}
 }
 
@@ -82,16 +80,20 @@ function addFilters(req, res) {
 	res.redirect('/favorieten');
 }
 
-function favorieten(req, res, next) {
+function favorieten(req, res) {
 	db.collection('filterSet').find().toArray(done);
 
 	function done(err, data) {
-		if (err) {
-			next(err);
-		} else {
-			res.render('favorieten.ejs', {
-				filterSet: data
-			});
-		}
+		res.render('favorieten.ejs', {
+			filterSet: data
+		});
 	}
 }
+
+// function deleteFilterSet(req, res) {
+// 	var id = req.params.id;
+//
+// 	data = data.filter(function(value) {
+// 		return value.id !== id;
+// 	});
+// }
