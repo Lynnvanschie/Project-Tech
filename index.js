@@ -55,11 +55,12 @@ function onhome(req, res) {
 		});
 	}
 
-	req.session.user = db.collection('user').findOne(req.body.username, test);
-
-	function test() {
-		return console.log(req.session.user);
-	}
+	//Proberen usernames op te slaan in een session
+	// req.session.user = db.collection('user').findOne(req.body.username, test);
+	//
+	// function test() {
+	// 	return console.log(req.session.user);
+	// }
 }
 
 function add(req, res) {
@@ -67,6 +68,7 @@ function add(req, res) {
 }
 
 function addFilters(req, res) {
+	//Voegt data uit de request body toe aan de database.
 	db.collection('filterSet').insertOne({
 		name: req.body.name,
 		geslacht: req.body.geslacht,
@@ -81,6 +83,7 @@ function addFilters(req, res) {
 }
 
 function favorieten(req, res) {
+	//Vindt de data uit de filterSet collectie en laad deze in.
 	db.collection('filterSet').find().toArray(done);
 
 	function done(err, data) {
