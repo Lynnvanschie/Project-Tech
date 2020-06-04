@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<title>Datingapp</title>
+</head>
+
+<body id="filterpage">
+	<header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Nieuw filterset aanmaken</h1>
+		<form action="favorieten.html">
+			<div class="container">
+				<p>Ik zoek een:</p>
+				<div class="geslacht">
+					<input type="radio" name="geslacht" value="Man" id="man" checked />
+					<label for="man">Man</label>
+
+					<input type="radio" name="geslacht" value="Vrouw" id="vrouw" />
+					<label for="vrouw">Vrouw</label>
+
+					<input type="radio" name="geslacht" value="Beide" id="beide" />
+					<label for="beide">Beide</label>
+				</div>
+			</div>
+			<hr>
+
+			<div class="container">
+				<div>
+					<p>Afstand: </p>
+					<p class="formcontext">Vul een getal in tussen de 5 en 500.</p>
+				</div>
+				<div>
+					<label for="afstand">tot <input type="number" min="5" max="500" name="afstand" value="afstand" id="afstand" required> km</label>
+				</div>
+			</div>
+			<hr>
+
+			<div class="container">
+				<div>
+					<p>Leeftijd: </p>
+					<p class="formcontext">Vul getallen in tussen de 18 en 80.</p>
+				</div>
+				<div>
+					<label for="leeftijdA">van <input type="number" min="18" max="79" name="leeftijdA" value="leeftijdA" id="leeftijdA" required></label>
+					<label for="leeftijdB">tot <input type="number" min="19" max="80" name="leeftijdB" value="leeftijdB" id="leeftijdB" required></label>
+				</div>
+			</div>
+			<hr>
+
+			<div class="container">
+				<p>Op zoek naar:</p>
+				<div>
+					<div>
+						<input type="checkbox" id="serieus" name="opzoek" value="Serieuze relatie">
+						<label for="serieus">Serieuze relatie</label>
+					</div>
+					<div>
+						<input type="checkbox" id="casual" name="opzoek" value="Casual fun">
+						<label for="casual">Casual fun</label>
+					</div>
+					<div>
+						<input type="checkbox" id="date" name="opzoek" value="Een date">
+						<label for="date">Een date</label>
+					</div>
+					<div>
+						<input type="checkbox" id="vrienden" name="opzoek" value="Vriendschap">
+						<label for="vrienden">Vriendschap</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+
+			<div class="container">
+				<p>Eigenschappen:</p>
+				<div>
+					<div>
+						<input type="checkbox" id="ambitieus" name="eigenschap" value="Ambitieus">
+						<label for="ambitieus">Ambitieus</label>
+					</div>
+					<div>
+						<input type="checkbox" id="oplettend" name="eigenschap" value="Oplettend">
+						<label for="oplettend">Oplettend</label>
+					</div>
+					<div>
+						<input type="checkbox" id="creatief" name="eigenschap" value="Creatief">
+						<label for="creatief">Creatief</label>
+					</div>
+					<div>
+						<input type="checkbox" id="spontaan" name="eigenschap" value="Spontaan">
+						<label for="spontaan">Spontaan</label>
+					</div>
+					<div>
+						<input type="checkbox" id="optimistisch" name="eigenschap" value="Optimistisch">
+						<label for="optimistisch">Optimistisch</label>
+					</div>
+					<div>
+						<input type="checkbox" id="avontuurlijk" name="eigenschap" value="Avontuurlijk">
+						<label for="avontuurlijk">Avontuurlijk</label>
+					</div>
+					<div>
+						<input type="checkbox" id="sportief" name="eigenschap" value="Sportief">
+						<label for="sportief">Sportief</label>
+					</div>
+					<div>
+						<input type="checkbox" id="intelligent" name="eigenschap" value="Intelligent">
+						<label for="intelligent">Intelligent</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+
+			<div class="container">
+				<p>Interesses:</p>
+				<div>
+					<div>
+						<input type="checkbox" id="boeken" name="interesse" value="Boeken">
+						<label for="boeken">Boeken</label>
+					</div>
+					<div>
+						<input type="checkbox" id="schilderen" name="interesse" value="Schilderen">
+						<label for="schilderen">Schilderen</label>
+					</div>
+					<div>
+						<input type="checkbox" id="sport" name="interesse" value="Sport">
+						<label for="sport">Sport</label>
+					</div>
+					<div>
+						<input type="checkbox" id="muziek" name="interesse" value="Muziek">
+						<label for="muziek">Muziek</label>
+					</div>
+					<div>
+						<input type="checkbox" id="films" name="interesse" value="Films">
+						<label for="films">Films</label>
+					</div>
+					<div>
+						<input type="checkbox" id="games" name="interesse" value="Video games">
+						<label for="games">Video games</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+
+			<div class="container">
+				<div>
+					<label for="name">Naam voorkeuren:</label>
+					<p class="formcontext">Gebruik ten minste 5 karakters.</p>
+				</div>
+				<input type="text" name="name" id="name" minlength="5" required>
+			</div>
+			<hr>
+
+			<input type="submit" name="submit" value="Sla op">
+		</form>
+	</main>
+	<footer>
+		<p>CMD 2019-2020 - Lynn van Schie - Blok Tech</p>
+	</footer>
+</body>
